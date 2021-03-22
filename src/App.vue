@@ -19,6 +19,9 @@
               <router-link to="/dictionary">
                 <v-btn elevation="2" color="primary" large @click="toggleDialog">Dictionary</v-btn>
               </router-link>
+              <router-link to="/random-word">
+                <v-btn elevation="2" color="primary" large @click="toggleDialog">Random Word</v-btn>
+              </router-link>
               <v-btn elevation="2" color="secondary" large @click="toggleDialog">Close</v-btn>
             </nav>
           </v-card>
@@ -64,10 +67,15 @@ export default {
   margin-top: 60px;
 }
 
-.nav-buttons .v-btn
-{
+.nav-buttons .v-btn{
   display: block;
   width: 100%;
   margin-bottom: 10px;
+}
+
+mark{
+  display: inline-block;
+  padding: .1rem .45rem;
+  border-radius: 1rem;
 }
 </style>

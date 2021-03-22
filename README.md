@@ -15,4 +15,5 @@ npm run build
 
 ## Libraries
 - Vue 2.x
+- Vuex
 - Vuetify
