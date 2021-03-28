@@ -2,8 +2,7 @@
 const {app, BrowserWindow, Menu} = require('electron');
 const path = require('path');
 
-process.env.NODE_ENV = 'production';
-
+process.env.NODE_ENV = 'development';
 function createWindow(){
   // Create the browser window.
   const mainWindow = new BrowserWindow({
@@ -18,8 +17,14 @@ function createWindow(){
   // and load the index.html of the app.
   mainWindow.loadFile(path.resolve(__dirname,'../dist/index.html'));
 
-  // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
+  mainWindow.database = [
+    {
+      "angielski": "angielski",
+      "polski": "polski",
+      "do": "robić",
+      "robić": "do"
+    }
+  ];
 }
 
 // This method will be called when Electron has finished
