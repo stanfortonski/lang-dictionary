@@ -6,7 +6,8 @@ Learn methods:
 - random word
 - guess word
 
-## Setup for desktop
+## Setup
+### Setup for desktop
 
 ``` bash
 # install dependencies
@@ -22,14 +23,14 @@ npm run electron
 npm run package-win
 
 # build app for Linux
-npm run package-win
+npm run package-linux
 
 # build app for Mac
 npm run package-mac
 
 ```
 
-## Setup for web browser
+### Setup for web browser
 
 ``` bash
 # install dependencies
