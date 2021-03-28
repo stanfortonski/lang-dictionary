@@ -4,9 +4,10 @@ const path = require('path');
 
 process.env.NODE_ENV = 'production';
 
+var mainWindow;
 function createWindow(){
   // Create the browser window.
-  const mainWindow = new BrowserWindow({
+  mainWindow = new BrowserWindow({
     width: 1280,
     height: 720,
     webPreferences: {
@@ -16,16 +17,7 @@ function createWindow(){
   });
 
   // and load the index.html of the app.
-  mainWindow.loadFile(path.resolve(__dirname,'../dist/index.html'));
-
-  mainWindow.database = [
-    {
-      "angielski": "angielski",
-      "polski": "polski",
-      "do": "robić",
-      "robić": "do"
-    }
-  ];
+  mainWindow.loadFile(path.resolve(__dirname, '../dist/index.html'));
 }
 
 // This method will be called when Electron has finished
@@ -40,6 +32,20 @@ app.whenReady().then(() => {
     if (BrowserWindow.getAllWindows().length === 0)
       createWindow();
   });
+
+  const contextMenuTemplate = [
+    {
+      label: 'Copy',
+      role: 'copy',
+      accelerator: 'CommandOrControl+C',
+    }
+  ];
+  const contextMenu = Menu.buildFromTemplate(contextMenuTemplate);
+
+  mainWindow.webContents.on('context-menu', (e, params) => {
+    e.preventDefault()
+    contextMenu.popup(mainWindow, params.x, params.y);
+  }, false);
 });
 
 // Quit when all windows are closed, except on macOS. There, it's common
@@ -59,7 +65,7 @@ if (process.env.NODE_ENV !== 'production'){
             click(item, focusedWindow){
                 focusedWindow.toggleDevTools();
             },
-            accelerator: process.platform == "darwin" ? 'Command+I' : 'CTRL+I'
+            accelerator: 'CommandOrControl+I'
         },
         {
             role: 'reload'
