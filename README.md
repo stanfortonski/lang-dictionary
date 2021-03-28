@@ -14,6 +14,8 @@ npm run build
 ```
 
 ## Libraries
+- Electron
 - Vue 2.x
 - Vuex
 - Vuetify
+- Vue-router
