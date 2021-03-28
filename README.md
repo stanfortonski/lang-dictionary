@@ -69,3 +69,8 @@ window.database = [
 - Vuex
 - Vuetify
 - Vue-router
+
+## Assets
+Icon: https://www.flaticon.com/free-icon/translate_2991142
+
+Icons made by [Freepik](https://www.freepik.com) from [https://www.flaticon.com](www.flaticon.com).
