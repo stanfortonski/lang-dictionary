@@ -1,6 +1,6 @@
 {
   "name": "lang-dictionary",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Better way to learn your words from Google Translate.",
   "author": "Stan Fortonski <contact@stanfortonski.dev>",
   "private": true,
