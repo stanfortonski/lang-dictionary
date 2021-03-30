@@ -1,6 +1,7 @@
 <template>
   <v-card elevation="2" class="px-4 py-10">
     <h1 class="mb-5">Dictionary</h1>
+    <div>Words in dictionary: {{ getDictionaryAll.length }}</div>
     <v-list>
       <v-list-item v-for="(item, i) in getDictionaryAll" :key="i" >
         <v-list-item-content>
