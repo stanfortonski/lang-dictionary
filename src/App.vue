@@ -8,11 +8,16 @@
     <v-main>
       <v-container>
         <v-dialog v-model="dialog" width="500" hide-overlay scrollable>
-          <v-card light class="px-5 py-4">
-            <v-card-title>
-              <span class="headline pb-2">Menu</span>
+          <v-card light>
+            <v-card-title class="mb-2">
+              <span class="headline ml-4 mt-2">Menu</span>
+
+              <v-btn @click="toggleDialog" icon color="error">
+                <v-icon>mdi-close</v-icon>
+              </v-btn>
             </v-card-title>
-            <nav class="nav-buttons">
+
+            <nav class="nav-buttons px-12 py-4">
               <router-link to="/">
                 <v-btn elevation="2" color="primary" large @click="toggleDialog">Start</v-btn>
               </router-link>
@@ -25,7 +30,6 @@
               <router-link to="/guess-word">
                 <v-btn elevation="2" color="primary" large @click="toggleDialog">Guess Word</v-btn>
               </router-link>
-              <v-btn elevation="2" color="secondary" large @click="toggleDialog">Close</v-btn>
             </nav>
           </v-card>
         </v-dialog>
@@ -69,6 +73,13 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+.v-dialog >.v-card > .v-card__title {
+  display: flex !important;
+  justify-content: space-between !important;
+  padding: 0.5rem;
+}
+
 
 .nav-buttons .v-btn{
   display: block;
